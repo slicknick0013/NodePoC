@@ -1,0 +1,56 @@
+.palette {
+    @include list-center-horizontal();
+
+    li {
+        @include setType(16);
+        margin: 0 $baseline/2 + px;
+    }
+}
+
+.swatch {
+    background-color: $color-main;
+    border: 1px solid $color-main;
+    display: inline-block;
+    height: $baseline * 4 + px;
+    width: $baseline * 4 + px;
+    vertical-align: top;
+    -webkit-border-radius: $baseline * 4 + px;
+       -moz-border-radius: $baseline * 4 + px;
+         -o-border-radius: $baseline * 4 + px;
+        -ms-border-radius: $baseline * 4 + px;
+            border-radius: $baseline * 4 + px;
+}
+
+.swatch-heading {
+    @include setType(16);
+}
+
+.heading {
+    background-color: $color-heading;
+}
+
+.main {
+    background-color: $color-main;
+}
+
+.bright {
+    background-color: $color-bright;
+}
+
+.link {
+    background-color: $color-link;
+
+    &:hover,
+    &:focus {
+        background-color: $color-link-hover;
+    }
+}
+
+.button {
+    background-color: $color-button;
+
+    &:hover,
+    &:focus {
+        background-color: $color-button-hover;
+    }
+}

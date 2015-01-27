@@ -1,0 +1,10 @@
+@mixin list-center-horizontal() {
+    @extend %scrub-list;
+    text-align: center;
+
+    li {
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+    }
+}

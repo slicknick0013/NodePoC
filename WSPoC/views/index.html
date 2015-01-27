@@ -1,0 +1,78 @@
+@@include('../src/views/inc/header.html', {
+    "title": "Style Guide",
+    "description": "Gulp Boilerplate style guide"
+})
+
+        <section class="content-main">
+            <article class="group">
+                <h2>Grids</h2>
+                <p>The grid system uses <a href="http://susy.oddbird.net/" rel="external">Susy</a>, a Sass layout framework.</p>
+
+                <h3>Example: <code>two-to-three</code></h3>
+                <div class="two-to-three">
+                    <div class="col">
+                        <h4>Moe Howard</h4>
+                        <p>The alpha stooge.</p>
+                    </div>
+                    <div class="col">
+                        <h4>Larry Fine</h4>
+                        <p>A virtuoso violinist, and middle stooge.</p>
+                    </div>
+                    <div class="col">
+                        <h4>Shemp Howard</h4>
+                        <p>Stooge antics led to post-traumatic stress disorder.</p>
+                    </div>
+                    <div class="col">
+                        <h4>Curly Howard</h4>
+                        <p>The funniest stooge and favorite by many.</p>
+                    </div>
+                    <div class="col">
+                        <h4>Joe</h4>
+                        <p>What can you say?</p>
+                    </div>
+                </div><!-- /.grid-vary -->
+            </article><!-- /.group -->
+
+            <article class="group">
+                <h2>Typography</h2>
+                <p>All typography and vertical rhythm uses base HTML elements (<code>h1, h2, p, table, etc.</code>) to set styles. The Sass module controlling this is a custom module found in <code>/src/assets/sass/base/_typesetter.scss</code></p>
+                <p>Headings get a sans-serif font while main body text gets a serif treatment. Those fonts are managed as variables and can be found in <code>/src/assets/sass/helpers/_variables.scss</code></p>
+            </article>
+
+            <article class="group">
+                <h2>Color</h2>
+                <p>Base colors are managed as variables and can be found in <code>/src/assets/sass/helpers/_variables.scss</code></p>
+
+                <ul class="palette">
+                    <li>
+                        <div class="swatch heading"></div>
+                        <h4 class="swatch-heading">Headings</h4>
+                    </li>
+                    <li>
+                        <div class="swatch main"></div>
+                        <h4 class="swatch-heading">Main</h4>
+                    </li>
+                    <li>
+                        <div class="swatch bright"></div>
+                        <h4 class="swatch-heading">White</h4>
+                    </li>
+                    <li>
+                        <div class="swatch link"></div>
+                        <h4 class="swatch-heading">Link</h4>
+                    </li>
+                    <li>
+                        <div class="swatch button"></div>
+                        <h4 class="swatch-heading">Button</h4>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="group">
+                <h2>Horizonal Rule</h2>
+                <p>The <code>hr</code> element inherits basic styling. It relies on the margins from the elements above and below it to determine it&#8217;s relationship in space.</p>
+                <hr>
+                <p>The <code>hr</code> is a quick way to create separation inside content blocks.</p>
+            </article>
+        </section><!-- /.content-main -->
+
+@@include('../src/views/inc/footer.html')

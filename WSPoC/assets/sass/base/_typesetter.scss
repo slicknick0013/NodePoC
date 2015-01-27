@@ -1,0 +1,96 @@
+// require helpers/
+$browser-context: 16;
+$baseline: 24;
+$typesetter-horizontal-debug: true;
+$typesetter-vertical-debug: false;
+
+@mixin repeating-linear-gradient($gradients) {
+    background: -webkit-repeating-linear-gradient( $gradients );
+    background: -moz-repeating-linear-gradient( $gradients );
+    background: -o-repeating-linear-gradient( $gradients );
+}
+
+@mixin gridlines($deg: -90deg, $line-color: #ccc) {
+    $gradients: $deg, transparent, transparent $baseline - 1 + px, $line-color $baseline + px;
+
+    @if $deg == -90deg {
+        @include repeating-linear-gradient( $gradients );
+        background-size: 100% $baseline + px;
+    } @else {
+        @include repeating-linear-gradient( $gradients );
+        background-size: $baseline + px 100%;
+        background-position: 50% 100%;
+    }
+}
+
+@function rem($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}rem;
+}
+
+@mixin setType($font-size: 16, $line-height: 1) {
+    $base: $baseline;
+
+    @if $font-size > $baseline {
+        @if $font-size % $baseline == 0 {
+            $base: $font-size;
+        } @else {
+            $offset: $font-size % $baseline;
+            $base: ($font-size - $offset) + $baseline;
+        }
+    }
+
+    font-size: $font-size + px;
+    font-size: rem($font-size);
+    line-height: $base/$font-size;
+    margin: $baseline + px 0;
+}
+
+@mixin set-relative-type() {
+    h1 {
+        @include setType(32);
+    }
+
+    h2,
+    article h1 {
+        @include setType(24);
+    }
+
+    h3 {
+        @include setType(18);
+    }
+
+    h4, h5, h6, p, ul, ol, dl, td, th, .vcard {
+        @include setType(16);
+    }
+
+    @media all and (min-width: $breakpoint-one) {
+        h1 {
+            @include setType(48);
+        }
+
+        h2,
+        article h1 {
+            @include setType(36);
+        }
+
+        h3 {
+            @include setType(32);
+        }
+
+        h4 {
+            @include setType(24);
+        }
+    }
+}
+
+body {
+    @if $typesetter-horizontal-debug {
+        @include gridlines();
+    }
+
+    @if $typesetter-vertical-debug {
+        .content-main {
+            @include gridlines(0deg);
+        }
+    }
+}

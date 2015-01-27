@@ -1,0 +1,25 @@
+// Layout
+$breakpoint-one: 40em;
+$breakpoint-two: 50em;
+$breakpoint-final: 60em;
+$baseline: 24;
+
+// Color
+$color-brand: rgb(195, 32, 47);
+$color-brand-trans: rgba(195, 32, 47, 0.75);
+$color-bright: rgb(255, 255, 255);
+
+// Color: Typography
+$font-heading: sans-serif;
+$font-main: serif;
+$color-heading: rgb(50, 50, 50);
+$color-main: rgb(25, 25, 25);
+
+// Color: links
+$color-link: rgb(68, 117, 153);
+$color-link-hover: rgba(68, 117, 153, 0.75);
+$color-link-visited: rgba(68, 117, 153, 0.50);
+
+// Color: buttons
+$color-button: rgb(255, 127, 0);
+$color-button-hover: rgba(255, 127, 0, 0.75);

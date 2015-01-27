@@ -1,0 +1,33 @@
+@include set-relative-type();
+
+body {
+    color: $color-main;
+    font-family: $font-main;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $color-heading;
+    font-family: $font-heading;
+}
+
+a {
+    color: $color-link;
+    border-bottom: 1px solid;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:visited {
+        font-weight: 400;
+    }
+
+    &:hover {
+        border-color: transparent;
+    }
+}
+
+hr {
+    background-color: $color-main;
+    border: 0;
+    height: 1px;
+    margin: -1px 0 0;
+}
